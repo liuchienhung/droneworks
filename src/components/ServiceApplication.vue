@@ -34,7 +34,7 @@
   
   <script>
   export default {
-    name: 'DashBoard',
+    name: 'ServiceApplication',
     data() {
       return {
         orderCount: 100,

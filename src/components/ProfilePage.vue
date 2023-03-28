@@ -34,7 +34,7 @@
   
   <script>
   export default {
-    name: 'DashBoard',
+    name: 'ProfilePage',
     data() {
       return {
         orderCount: 100,
