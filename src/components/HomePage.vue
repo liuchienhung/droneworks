@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app">
     <SidebarPage />
     <div class="main">
       <div class="content">
@@ -15,7 +15,7 @@ import SidebarPage from './SidebarPage.vue'
 import FooterPage from './FooterPage.vue'
 
 export default {
-  name: 'App',
+  name: 'HomePage',
   components: {
     SidebarPage,
     FooterPage

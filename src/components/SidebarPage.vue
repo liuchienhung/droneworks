@@ -16,9 +16,9 @@
     data() {
       return {
         menuItems: [
-          { title: "個人資料", routeName: "Profile" },
-          { title: "無人機服務申請", routeName: "DroneServiceApplication" },
-          { title: "後臺管理作業", routeName: "Admin" },
+          { title: "個人資料", routeName: "ProfilePage" },
+          { title: "無人機服務申請", routeName: "ServiceApplication" },
+          { title: "後臺管理作業", routeName: "AdminPage" },
         ],
         activeMenuItemIndex: 0,
       };
