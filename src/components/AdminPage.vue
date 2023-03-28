@@ -1,111 +1,94 @@
 <template>
-    <div class="dashboard-container">
-      <div class="dashboard-header">
-        <h2 class="dashboard-title">儀表板</h2>
-      </div>
-      <div class="dashboard-content">
-        <div class="dashboard-card">
-          <div class="dashboard-card-header">
-            <h3 class="dashboard-card-title">訂單總數</h3>
-          </div>
-          <div class="dashboard-card-body">
-            <p class="dashboard-card-text">{{ orderCount }}</p>
-          </div>
-        </div>
-        <div class="dashboard-card">
-          <div class="dashboard-card-header">
-            <h3 class="dashboard-card-title">營業額</h3>
-          </div>
-          <div class="dashboard-card-body">
-            <p class="dashboard-card-text">{{ revenue }}</p>
-          </div>
-        </div>
-        <div class="dashboard-card">
-          <div class="dashboard-card-header">
-            <h3 class="dashboard-card-title">訂單完成率</h3>
-          </div>
-          <div class="dashboard-card-body">
-            <p class="dashboard-card-text">{{ orderCompletionRate }}%</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'DashBoard',
-    data() {
-      return {
-        orderCount: 100,
-        revenue: '$10,000',
-        completedOrders: 85
-      }
-    },
-    computed: {
-      orderCompletionRate() {
-        return Math.round((this.completedOrders / this.orderCount) * 100);
-      }
-    }
-  }
-  </script>
-  
-  <style scoped>
-  .dashboard-container {
-    margin: 2rem;
-  }
-  
-  .dashboard-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-  
-  .dashboard-title {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .dashboard-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-  
-  .dashboard-card {
-    flex-basis: 30%;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
-  }
-  
-  .dashboard-card-header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 1rem;
-  }
-  
-  .dashboard-card-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-  }
-  
-  .dashboard-card-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .dashboard-card-text {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  </style>
-  
+  <div class="admin-page">
+    <h1 class="page-title">無人機飛行員作業資訊</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>明細</th>
+          <th>帳號</th>
+          <th>名稱</th>
+          <th>真實姓名</th>
+          <th>總任務</th>
+          <th>已完成任務</th>
+          <th>分鐘</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(pilot, index) in pilots" :key="index">
+          <td>{{ index + 1 }}</td>
+          <td>{{ pilot.username }}</td>
+          <td>{{ pilot.name }}</td>
+          <td>{{ pilot.realname }}</td>
+          <td>{{ pilot.total_tasks }}</td>
+          <td>{{ pilot.completed_tasks }}</td>
+          <td>{{ pilot.minutes }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "AdminPage",
+  data() {
+    return {
+      pilots: [
+        {
+          username: "pilot01",
+          name: "Pilot One",
+          realname: "John Doe",
+          total_tasks: 10,
+          completed_tasks: 5,
+          minutes: 120,
+        },
+        {
+          username: "pilot02",
+          name: "Pilot Two",
+          realname: "Jane Doe",
+          total_tasks: 8,
+          completed_tasks: 3,
+          minutes: 90,
+        },
+        {
+          username: "pilot03",
+          name: "Pilot Three",
+          realname: "James Smith",
+          total_tasks: 12,
+          completed_tasks: 8,
+          minutes: 180,
+        },
+      ],
+    };
+  },
+};
+</script>
+
+<style scoped>
+.admin-page {
+  margin: 40px auto;
+  max-width: 800px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f5f5f5;
+}
+</style>

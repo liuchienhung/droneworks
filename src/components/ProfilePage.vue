@@ -1,111 +1,97 @@
 <template>
-    <div class="dashboard-container">
-      <div class="dashboard-header">
-        <h2 class="dashboard-title">儀表板</h2>
+  <div class="profile">
+    <h2>Profile Information</h2>
+    <form>
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" v-model="name">
       </div>
-      <div class="dashboard-content">
-        <div class="dashboard-card">
-          <div class="dashboard-card-header">
-            <h3 class="dashboard-card-title">訂單總數</h3>
-          </div>
-          <div class="dashboard-card-body">
-            <p class="dashboard-card-text">{{ orderCount }}</p>
-          </div>
-        </div>
-        <div class="dashboard-card">
-          <div class="dashboard-card-header">
-            <h3 class="dashboard-card-title">營業額</h3>
-          </div>
-          <div class="dashboard-card-body">
-            <p class="dashboard-card-text">{{ revenue }}</p>
-          </div>
-        </div>
-        <div class="dashboard-card">
-          <div class="dashboard-card-header">
-            <h3 class="dashboard-card-title">訂單完成率</h3>
-          </div>
-          <div class="dashboard-card-body">
-            <p class="dashboard-card-text">{{ orderCompletionRate }}%</p>
-          </div>
-        </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" v-model="email">
       </div>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'ProfilePage',
-    data() {
-      return {
-        orderCount: 100,
-        revenue: '$10,000',
-        completedOrders: 85
-      }
-    },
-    computed: {
-      orderCompletionRate() {
-        return Math.round((this.completedOrders / this.orderCount) * 100);
-      }
+      <div>
+        <label for="gender">Gender:</label>
+        <select id="gender" v-model="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" v-model="birthday">
+      </div>
+      <button type="submit" @click.prevent="saveProfile">Save</button>
+    </form>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      name: '劉建宏',
+      email: 'test@gmail.com',
+      gender: 'male',
+      birthday: '2023-03-28'
+    }
+  },
+  methods: {
+    saveProfile() {
+      // 將資料提交到後端或進行其他操作
+      console.log('Profile saved!');
     }
   }
-  </script>
-  
-  <style scoped>
-  .dashboard-container {
-    margin: 2rem;
-  }
-  
-  .dashboard-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-  
-  .dashboard-title {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .dashboard-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-  
-  .dashboard-card {
-    flex-basis: 30%;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
-  }
-  
-  .dashboard-card-header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 1rem;
-  }
-  
-  .dashboard-card-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-  }
-  
-  .dashboard-card-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .dashboard-card-text {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  </style>
-  
+}
+</script>
+<style scoped>
+.profile {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profile h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.profile form div {
+  margin-bottom: 10px;
+}
+
+.profile label {
+  display: inline-block;
+  width: 100px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.profile input,
+.profile select {
+  width: 250px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.profile button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>

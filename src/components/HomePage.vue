@@ -2,7 +2,7 @@
   <div class="app">
     <SidebarPage />
     <div class="main">
-      <div class="content">
+      <div class="content" style="margin-left: 200px;">
         <router-view></router-view>
       </div>
       <FooterPage />
