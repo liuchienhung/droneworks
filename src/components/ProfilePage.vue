@@ -1,6 +1,6 @@
 <template>
   <div class="profile">
-    <h2>Profile Information</h2>
+    <h2>個人資訊</h2>
     <form>
       <div>
         <label for="name">Name:</label>

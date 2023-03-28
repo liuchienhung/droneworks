@@ -3,8 +3,8 @@
     <h1 class="login-title">登入頁面</h1>
     <form class="login-form" @submit.prevent="login">
       <div class="form-group">
-        <label class="form-label">使用者名稱：</label>
-        <input class="form-input" type="text" name="username" placeholder="請輸入使用者名稱" v-model="user.username">
+        <label class="form-label">帳號</label>
+        <input class="form-input" type="text" name="username" placeholder="請輸入帳號" v-model="user.username">
       </div>
       <div class="form-group">
         <label class="form-label">密碼：</label>
@@ -15,6 +15,9 @@
       </div>
       <button class="login-btn" type="submit">登入</button>
     </form>
+    <footer class="login-footer">
+      © 2023 DroneWorks. All rights reserved.
+    </footer>
   </div>
 </template>
 <script>
@@ -63,6 +66,11 @@ export default {
   background-color: #f2f2f2;
 }
 
+.login-image img {
+  width: 60%;
+  max-width: 400px;
+}
+
 .login-title {
   font-size: 2rem;
   color: #333;
@@ -79,6 +87,14 @@ export default {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
+.login-footer {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #aaa;
+}
+
 
 .form-group {
   display: flex;
