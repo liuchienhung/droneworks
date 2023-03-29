@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginPage from '@/components/LoginPage.vue'
 import HomePage from '@/components/HomePage.vue'
-import ProfilePage from '@/components/ProfilePage.vue'
-import AdminPage from '@/components/AdminPage.vue'
-import ServiceApplication from '@/components/ServiceApplication.vue'
+//import ProfilePage from '@/components/ProfilePage.vue'
+//import AdminPage from '@/components/AdminPage.vue'
+//import ServiceApplication from '@/components/ServiceApplication.vue'
 import ServiceApply from '@/components/ServiceApply.vue'
 import MyApplications from '@/components/MyApplications.vue'
 import ApplicationReview from '@/components/ApplicationReview.vue'
@@ -30,60 +30,38 @@ const router = createRouter({
       component: HomePage,
       children: [
         {
-          path: 'profile',
-          name: 'ProfilePage',
-          component: ProfilePage,
-          children: [
-            {
-              path: 'basic',
-              name: 'BasicInfo',
-              component: BasicInfo
-            },
-            {
-              path: 'password',
-              name: 'ChangePassword',
-              component: ChangePassword
-            },
-            {
-              path: 'avatar',
-              name: 'AvatarSetting',
-              component: AvatarSetting
-            }
-          ]
+          path: 'basic',
+          name: 'BasicInfo',
+          component: BasicInfo
         },
         {
-          path: 'service',
-          name: 'ServiceApplication',
-          component: ServiceApplication,
-          children: [
-            {
-              path: 'apply',
-              name: 'ServiceApply',
-              component: ServiceApply
-            },
-            {
-              path: 'myapplications',
-              name: 'MyApplications',
-              component: MyApplications
-            },
-            {
-              path: 'applicationreview',
-              name: 'ApplicationReview',
-              component: ApplicationReview
-            }
-          ]
+          path: 'password',
+          name: 'ChangePassword',
+          component: ChangePassword
         },
         {
-          path: 'admin',
-          name: 'AdminPage',
-          component: AdminPage,
-          children: [
-            {
-              path: 'report',
-              name: 'ReportInfo',
-              component: ReportInfo
-            }
-          ]
+          path: 'avatar',
+          name: 'AvatarSetting',
+          component: AvatarSetting
+        },{
+          path: 'apply',
+          name: 'ServiceApply',
+          component: ServiceApply
+        },
+        {
+          path: 'myapplications',
+          name: 'MyApplications',
+          component: MyApplications
+        },
+        {
+          path: 'applicationreview',
+          name: 'ApplicationReview',
+          component: ApplicationReview
+        },
+        {
+          path: 'report',
+          name: 'ReportInfo',
+          component: ReportInfo
         }
       ]
     }
