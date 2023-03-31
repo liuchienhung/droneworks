@@ -4,12 +4,12 @@
     <form class="login-form" @submit.prevent="login">
       <div class="form-group">
         <label class="form-label">帳號</label>
-        <input class="form-input" type="text" name="username" placeholder="請輸入帳號" v-model="user.username">
+        <input class="form-input" type="text" name="username" placeholder="請輸入帳號" v-model="user.username" required>
       </div>
       <div class="form-group">
         <label class="form-label">密碼：</label>
         <div class="password-input">
-          <input class="form-input" :type="passwordType" name="password" placeholder="請輸入密碼" v-model="user.password">
+          <input class="form-input" :type="passwordType" name="password" placeholder="請輸入密碼" v-model="user.password" minlength="6" required>
           <button class="password-toggle" type="button" @click="togglePasswordVisibility">{{ passwordToggleLabel }}</button>
         </div>
       </div>
@@ -136,3 +136,13 @@ export default {
   }
 }
 </style>
+
+<!-- 
+  這裡是 LoginPage 組件的注釋說明：
+  - 使用一個 form 表單讓使用者輸入帳號密碼
+  - 提供一個登入按鈕，點擊後進行登入驗證
+  - 登入成功後導向首頁
+  - 資料驗證及登入邏輯尚未實作
+  - 表單樣式來自 Bootstrap
+-->
+
