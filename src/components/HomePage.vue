@@ -1,12 +1,13 @@
 <template>
   <div class="app">
+    <FooterPage />
     <SidebarPage />
     <div class="main">
       <div class="content" style="margin-left: 200px;">
         <router-view></router-view>
       </div>
-      <FooterPage />
     </div>
+    
   </div>
 </template>
 
