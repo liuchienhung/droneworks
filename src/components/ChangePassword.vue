@@ -1,20 +1,20 @@
 <template>
   <div class="container mt-5">
-    <h1 class="text-center mb-4">Change Password</h1>
+    <h1 class="text-center mb-4">修改密碼</h1>
     <form class="form" @submit.prevent="changePassword">
       <div class="form-group">
-        <label class="form-label" for="oldPassword">Old Password</label>
+        <label class="form-label" for="oldPassword">舊密碼</label>
         <input type="password" class="form-control" id="oldPassword" v-model="oldPassword">
       </div>
       <div class="form-group">
-        <label class="form-label" for="newPassword">New Password</label>
+        <label class="form-label" for="newPassword">新密碼</label>
         <input type="password" class="form-control" id="newPassword" v-model="newPassword">
       </div>
       <div class="form-group">
-        <label class="form-label" for="confirmPassword">Confirm Password</label>
+        <label class="form-label" for="confirmPassword">確認密碼</label>
         <input type="password" class="form-control" id="confirmPassword" v-model="confirmPassword">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">提交</button>
     </form>
   </div>
 </template>
@@ -50,7 +50,7 @@ export default {
 };
 </script>
 <style>
-.form {
+.container {
   max-width: 500px;
   margin: auto;
 }
@@ -79,10 +79,29 @@ export default {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+/*
 .btn-primary {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  display: block;
+  width: 100%;
+  margin-top: 2rem;
+}
+*/
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  display: block;
+  width: 25%;
+  margin-top: 2rem;
 }
 
 .btn-primary:hover {

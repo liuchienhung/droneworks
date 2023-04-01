@@ -33,9 +33,9 @@ export default {
           title: "個人資料",
           routeName: "ProfilePage",
           children: [
-            { title: "基本資料", routeName: "BasicInfo" },
+            { title: "帳號設定", routeName: "BasicInfo" },
             { title: "修改密碼", routeName: "ChangePassword" },
-            { title: "頭像設置", routeName: "AvatarSetting" },
+            //{ title: "頭像設置", routeName: "AvatarSetting" },
           ],
         },
         {
