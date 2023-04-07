@@ -11,6 +11,7 @@ import BasicInfo from '@/components/BasicInfo.vue'
 import ChangePassword from '@/components/ChangePassword.vue'
 import AvatarSetting from '@/components/AvatarSetting.vue'
 import ReportInfo from '@/components/ReportInfo.vue'
+import TestPage from '@/components/TestPage.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -23,6 +24,11 @@ const router = createRouter({
       path: '/login',
       name: 'LoginPage',
       component: LoginPage
+    },   
+    {
+      path: '/test',
+      name: 'TestPage',
+      component: TestPage
     },
     {
       path: '/home',
