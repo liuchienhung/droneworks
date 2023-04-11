@@ -3,20 +3,26 @@
     <div class="sidebar-header">
       <router-link to="/">
         <img src="./assets/logo.png" alt="Logo" class="logo" />
-        </router-link>
+      </router-link>
       <h1 class="title">DroneWorks</h1>
     </div>
     <ul class="menu">
-      <li v-for="(item, index) in menuItems" :key="index" :class="{ active: activeMenuItemIndex === index }">
+      <li
+        v-for="(item, index) in menuItems"
+        :key="index"
+        :class="{ active: activeMenuItemIndex === index }"
+      >
         <div class="menu-item" @click="toggleSubmenu(index)">
           {{ item.title }}
           <span class="submenu-icon" v-if="item.children">
-            {{ isSubmenuOpen(index) ? '▼' : '▶' }}
+            {{ isSubmenuOpen(index) ? "▼" : "▶" }}
           </span>
         </div>
         <ul v-if="item.children && isSubmenuOpen(index)" class="submenu">
           <li v-for="(child, childIndex) in item.children" :key="childIndex">
-            <router-link :to="{ name: child.routeName }">{{ child.title }}</router-link>
+            <router-link :to="{ name: child.routeName }">{{
+              child.title
+            }}</router-link>
           </li>
         </ul>
       </li>
@@ -47,11 +53,10 @@ export default {
             { title: "申請審核", routeName: "ApplicationReview" },
           ],
         },
-        { title: "後臺管理作業", 
+        {
+          title: "後臺管理作業",
           routeName: "AdminPage",
-          children: [
-            { title: "報表", routeName: "ReportInfo" },
-          ],
+          children: [{ title: "報表", routeName: "ReportInfo" }],
         },
       ],
       activeMenuItemIndex: 0,

@@ -12,20 +12,25 @@
       </div>
       <div class="form-group">
         <label for="location">申請地點:</label>
-        <input type="text" id="location" name="location" required>
+        <input type="text" id="location" name="location" required />
       </div>
       <div class="form-group">
         <label for="date">申請日期:</label>
-        <input type="date" id="date" name="date" required>
+        <input type="date" id="date" name="date" required />
       </div>
       <div class="form-group">
         <label for="duration">服務時長:</label>
-        <input type="number" id="duration" name="duration" required>
+        <input type="number" id="duration" name="duration" required />
         <label for="duration">小時</label>
       </div>
       <div class="form-group">
         <label for="description">服務描述:</label>
-        <textarea id="description" name="description" rows="5" required></textarea>
+        <textarea
+          id="description"
+          name="description"
+          rows="5"
+          required
+        ></textarea>
       </div>
       <button type="submit">提交申請</button>
     </form>
@@ -84,5 +89,4 @@
 .service-application input[type="submit"]:hover {
   background-color: #0069d9;
 }
-
 </style>

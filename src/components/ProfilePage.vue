@@ -4,11 +4,11 @@
     <form>
       <div>
         <label for="name">Name:</label>
-        <input type="text" id="name" v-model="name">
+        <input type="text" id="name" v-model="name" />
       </div>
       <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" v-model="email">
+        <input type="email" id="email" v-model="email" />
       </div>
       <div>
         <label for="gender">Gender:</label>
@@ -20,7 +20,7 @@
       </div>
       <div>
         <label for="birthday">Birthday:</label>
-        <input type="date" id="birthday" v-model="birthday">
+        <input type="date" id="birthday" v-model="birthday" />
       </div>
       <button type="submit" @click.prevent="saveProfile">Save</button>
     </form>
@@ -31,19 +31,19 @@
 export default {
   data() {
     return {
-      name: '劉建宏',
-      email: 'test@gmail.com',
-      gender: 'male',
-      birthday: '2023-03-28'
-    }
+      name: "劉建宏",
+      email: "test@gmail.com",
+      gender: "male",
+      birthday: "2023-03-28",
+    };
   },
   methods: {
     saveProfile() {
       // 將資料提交到後端或進行其他操作
-      console.log('Profile saved!');
-    }
-  }
-}
+      console.log("Profile saved!");
+    },
+  },
+};
 </script>
 <style scoped>
 .profile {

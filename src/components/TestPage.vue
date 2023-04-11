@@ -45,6 +45,11 @@
             </form>
           </div>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="far fa-user"></i>
+          </a>
+        </li>
       </ul>
     </nav>
 
@@ -87,12 +92,10 @@
           >
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-                 <li class="nav-item">
+            <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-table"></i>
-                <p>
-                  儀錶板
-                </p>
+                <p>儀錶板</p>
               </a>
             </li>
 
@@ -132,7 +135,19 @@
                 <li class="nav-item">
                   <a href="#" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>服務申請</p>
+                    <p>無人機預約作業</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>無人車預約作業</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>無人船預約作業</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -159,15 +174,29 @@
                 </p>
               </a>
               <ul class="nav nav-treeview">
-                <li class="nav-item">
+                <li class="nav-item  menu-is-opening menu-open">
                   <a href="#" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>報表</p>
+                    <i class="right fas fa-angle-left"></i>
                   </a>
+                  <ul class="nav nav-treeview" style="display: block">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>飛行員作業資訊</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="far fa-dot-circle nav-icon"></i>
+                        <p>操作員作業資訊</p>
+                      </a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>
-
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

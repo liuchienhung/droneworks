@@ -4,13 +4,34 @@
     <form class="login-form" @submit.prevent="login">
       <div class="form-group">
         <label class="form-label">帳號</label>
-        <input class="form-input" type="text" name="username" placeholder="請輸入帳號" v-model="user.username" required>
+        <input
+          class="form-input"
+          type="text"
+          name="username"
+          placeholder="請輸入帳號"
+          v-model="user.username"
+          required
+        />
       </div>
       <div class="form-group">
         <label class="form-label">密碼：</label>
         <div class="password-input">
-          <input class="form-input" :type="passwordType" name="password" placeholder="請輸入密碼" v-model="user.password" minlength="6" required>
-          <button class="password-toggle" type="button" @click="togglePasswordVisibility">{{ passwordToggleLabel }}</button>
+          <input
+            class="form-input"
+            :type="passwordType"
+            name="password"
+            placeholder="請輸入密碼"
+            v-model="user.password"
+            minlength="6"
+            required
+          />
+          <button
+            class="password-toggle"
+            type="button"
+            @click="togglePasswordVisibility"
+          >
+            {{ passwordToggleLabel }}
+          </button>
         </div>
       </div>
       <button class="login-btn" type="submit">登入</button>
@@ -25,35 +46,35 @@ export default {
   data() {
     return {
       user: {
-        username: '',
-        password: ''
+        username: "",
+        password: "",
       },
-      passwordType: 'password',
-      passwordToggleLabel: '顯示密碼'
-    }
+      passwordType: "password",
+      passwordToggleLabel: "顯示密碼",
+    };
   },
   methods: {
     login() {
       // 模擬登入操作
-      if (this.user.username === 'test' && this.user.password === '123456') {
+      if (this.user.username === "test" && this.user.password === "123456") {
         // 登入成功，導引到新頁面
-        this.$router.push('/home')
+        this.$router.push("/home");
       } else {
         // 登入失敗，彈出錯誤提示
-        alert('使用者名稱或密碼錯誤')
+        alert("使用者名稱或密碼錯誤");
       }
     },
     togglePasswordVisibility() {
-      if (this.passwordType === 'password') {
-        this.passwordType = 'text'
-        this.passwordToggleLabel = '隱藏密碼'
+      if (this.passwordType === "password") {
+        this.passwordType = "text";
+        this.passwordToggleLabel = "隱藏密碼";
       } else {
-        this.passwordType = 'password'
-        this.passwordToggleLabel = '顯示密碼'
+        this.passwordType = "password";
+        this.passwordToggleLabel = "顯示密碼";
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>
@@ -94,7 +115,6 @@ export default {
   text-align: center;
   color: #aaa;
 }
-
 
 .form-group {
   display: flex;
@@ -145,4 +165,3 @@ export default {
   - 資料驗證及登入邏輯尚未實作
   - 表單樣式來自 Bootstrap
 -->
-

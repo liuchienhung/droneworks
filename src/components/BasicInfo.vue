@@ -2,22 +2,26 @@
   <div class="profile">
     <h2>帳號設定</h2>
     <form>
-      
       <div class="avatar-preview">
-        <img v-if="preview" :src="preview" alt="avatar preview">
+        <img v-if="preview" :src="preview" alt="avatar preview" />
         <span v-else class="no-avatar">未上傳頭像</span>
       </div>
       <div>
         <label for="avatar">上傳頭像：</label>
-        <input type="file" id="avatar" accept="image/*" @change="onAvatarChange">
+        <input
+          type="file"
+          id="avatar"
+          accept="image/*"
+          @change="onAvatarChange"
+        />
       </div>
       <div>
         <label for="name">姓名：</label>
-        <input type="text" id="name" v-model="name">
+        <input type="text" id="name" v-model="name" />
       </div>
       <div>
         <label for="email">電子郵件：</label>
-        <input type="email" id="email" v-model="email">
+        <input type="email" id="email" v-model="email" />
       </div>
       <div>
         <label for="gender">性別：</label>
@@ -29,30 +33,29 @@
       </div>
       <div>
         <label for="birthday">生日：</label>
-        <input type="date" id="birthday" v-model="birthday">
+        <input type="date" id="birthday" v-model="birthday" />
       </div>
       <button type="submit" @click.prevent="saveProfile">儲存</button>
     </form>
   </div>
 </template>
 
-
 <script>
 export default {
   data() {
     return {
-      name: '劉建宏',
-      email: 'test@gmail.com',
-      gender: 'male',
-      birthday: '2023-03-28',
+      name: "劉建宏",
+      email: "test@gmail.com",
+      gender: "male",
+      birthday: "2023-03-28",
       avatar: null, // 新增 avatar 資料
-      preview: null // 新增 preview 資料
-    }
+      preview: null, // 新增 preview 資料
+    };
   },
   methods: {
     saveProfile() {
       // 將資料提交到後端或進行其他操作
-      console.log('Profile saved!');
+      console.log("Profile saved!");
     },
     onAvatarChange(event) {
       const file = event.target.files[0];
@@ -65,9 +68,9 @@ export default {
       };
       // 存儲圖片
       this.avatar = file;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 <style scoped>
 .profile {

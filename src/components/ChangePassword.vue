@@ -4,15 +4,30 @@
     <form class="form" @submit.prevent="changePassword">
       <div class="form-group">
         <label class="form-label" for="oldPassword">舊密碼</label>
-        <input type="password" class="form-control" id="oldPassword" v-model="oldPassword">
+        <input
+          type="password"
+          class="form-control"
+          id="oldPassword"
+          v-model="oldPassword"
+        />
       </div>
       <div class="form-group">
         <label class="form-label" for="newPassword">新密碼</label>
-        <input type="password" class="form-control" id="newPassword" v-model="newPassword">
+        <input
+          type="password"
+          class="form-control"
+          id="newPassword"
+          v-model="newPassword"
+        />
       </div>
       <div class="form-group">
         <label class="form-label" for="confirmPassword">確認密碼</label>
-        <input type="password" class="form-control" id="confirmPassword" v-model="confirmPassword">
+        <input
+          type="password"
+          class="form-control"
+          id="confirmPassword"
+          v-model="confirmPassword"
+        />
       </div>
       <button type="submit" class="btn btn-primary">提交</button>
     </form>
@@ -22,31 +37,31 @@
 export default {
   data() {
     return {
-      oldPassword: '',
-      newPassword: '',
-      confirmPassword: ''
+      oldPassword: "",
+      newPassword: "",
+      confirmPassword: "",
     };
   },
   methods: {
     changePassword() {
       // 驗證新舊密碼
       if (this.newPassword !== this.confirmPassword) {
-        alert('New password and confirm password do not match.');
+        alert("New password and confirm password do not match.");
         return;
       }
 
       // 傳送 API 請求到後端修改密碼
       // TODO: replace with actual API call
-      console.log('Old Password:', this.oldPassword);
-      console.log('New Password:', this.newPassword);
-      console.log('Confirm Password:', this.confirmPassword);
+      console.log("Old Password:", this.oldPassword);
+      console.log("New Password:", this.newPassword);
+      console.log("Confirm Password:", this.confirmPassword);
 
       // 清空輸入框
-      this.oldPassword = '';
-      this.newPassword = '';
-      this.confirmPassword = '';
-    }
-  }
+      this.oldPassword = "";
+      this.newPassword = "";
+      this.confirmPassword = "";
+    },
+  },
 };
 </script>
 <style>
