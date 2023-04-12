@@ -3,27 +3,33 @@
     <h1 class="login-title">登入頁面</h1>
     <form class="login-form" @submit.prevent="login">
       <div class="form-group">
-        <label class="form-label">帳號</label>
+        <label class="form-label" for="username">帳號</label>
         <input
           class="form-input"
           type="text"
           name="username"
+          id="username"
           placeholder="請輸入帳號"
-          v-model="user.username"
+          v-model.trim="user.username"
           required
+          pattern="^[a-zA-Z][a-zA-Z0-9_]{4,15}$"
+          title="帳號必須以英文字母開頭，只能包含英文字母、數字和底線，長度在 5 到 16 個字元之間"
         />
       </div>
       <div class="form-group">
-        <label class="form-label">密碼：</label>
+        <label class="form-label" for="password">密碼：</label>
         <div class="password-input">
           <input
             class="form-input"
             :type="passwordType"
             name="password"
+            id="password"
             placeholder="請輸入密碼"
-            v-model="user.password"
+            v-model.trim="user.password"
             minlength="6"
             required
+            pattern="^[a-zA-Z]\w{5,17}$"
+            title="密碼必須以英文字母開頭，只能包含英文字母、數字和底線，長度在 6 到 18 個字元之間"
           />
           <button
             class="password-toggle"
@@ -41,6 +47,7 @@
     </footer>
   </div>
 </template>
+
 <script>
 export default {
   data() {
@@ -56,9 +63,9 @@ export default {
   methods: {
     login() {
       // 模擬登入操作
-      if (this.user.username === "test" && this.user.password === "123456") {
+      if (this.user.username === "testp" && this.user.password === "a123456") {
         // 登入成功，導引到新頁面
-        this.$router.push("/home");
+        this.$router.push("/dashboard");
       } else {
         // 登入失敗，彈出錯誤提示
         alert("使用者名稱或密碼錯誤");
