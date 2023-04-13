@@ -14,7 +14,9 @@
           required
           pattern="^[a-zA-Z][a-zA-Z0-9_]{4,15}$"
           title="帳號必須以英文字母開頭，只能包含英文字母、數字和底線，長度在 5 到 16 個字元之間"
+          @input="usernameInputHandler"
         />
+        <span class="input-hint" v-if="showUsernameHint">{{ usernameHint }}</span>
       </div>
       <div class="form-group">
         <label class="form-label" for="password">密碼：</label>
@@ -30,6 +32,7 @@
             required
             pattern="^[a-zA-Z]\w{5,17}$"
             title="密碼必須以英文字母開頭，只能包含英文字母、數字和底線，長度在 6 到 18 個字元之間"
+            @input="passwordInputHandler"
           />
           <button
             class="password-toggle"
@@ -39,15 +42,15 @@
             {{ passwordToggleLabel }}
           </button>
         </div>
+        <span class="input-hint" v-if="showPasswordHint">{{ passwordHint }}</span>
       </div>
-      <button class="login-btn" type="submit">登入</button>
+      <button class="login-btn" type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">登入</button>
     </form>
     <footer class="login-footer">
       © 2023 DroneWorks. All rights reserved.
     </footer>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -58,6 +61,10 @@ export default {
       },
       passwordType: "password",
       passwordToggleLabel: "顯示密碼",
+      showUsernameHint: false,
+      showPasswordHint: false,
+      usernameHint: "帳號必須以英文字母開頭，只能包含英文字母、數字和底線，長度在 5 到 16 個字元之間",
+      passwordHint: "密碼必須以英文字母開頭，只能包含英文字母、數字和底線，長度在 6 到 18 個字元之間",
     };
   },
   methods: {
